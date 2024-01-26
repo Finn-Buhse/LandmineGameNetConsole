@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FDBCodingChallengeMk1.0", "FDBCodingChallengeMk1.0\FDBCodingChallengeMk1.0.csproj", "{C70FF786-3F9D-46BD-9FAF-12967DB88CF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{511C99C3-E144-49B9-A9B6-32A9ADA25088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Testing\Test.csproj", "{511C99C3-E144-49B9-A9B6-32A9ADA25088}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
