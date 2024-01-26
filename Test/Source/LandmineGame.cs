@@ -19,7 +19,7 @@ namespace LandmineGameClasses
         private int boardWidth = 8;
         private int boardHeight = 8;
 
-        private GameInfo lastFrameGameInfo;
+        private GameInfo lastFrameGameInfo = new GameInfo(BoardSquare.Empty, PlayerStatus.Alive);
 
         public void setBoardWidthHeightInitialiseHints(int boardWidth, int boardHeight)
         {
@@ -105,6 +105,12 @@ namespace LandmineGameClasses
             public BoardSquare playerVisitedSquare;
             public PlayerStatus playerStatus;
 
+            public GameInfo(BoardSquare playerVisitedSquare, PlayerStatus playerStatus)
+            {
+                this.playerVisitedSquare = playerVisitedSquare;
+                this.playerStatus = playerStatus;
+            }
+                            
             public bool gameShouldEnd()
             {
                 // If not Alive, the player will either have Won or Lost, in which case the game should end
@@ -212,8 +218,8 @@ namespace LandmineGameClasses
                     {
                         result +=
                             "Board:\n" + board.getDisplayString() +
-                            "\nPlayer coordinates: (" + player.x.ToString() + ", " + player.y.ToString() + ")\n"
-                            + (gameInfo.playerVisitedSquare == BoardSquare.Mine ? "You hit a mine!" : "You did not hit any mines.");
+                            "\nPlayer coordinates: (" + player.x.ToString() + ", " + player.y.ToString() + ")\n" +
+                            (gameInfo.playerVisitedSquare == BoardSquare.Mine ? "You hit a mine!" : "You did not hit any mines.");
                     }
                     return result;
                 }

@@ -16,10 +16,13 @@ game.setBoardWidthHeightInitialiseHints(widthHeight[0], widthHeight[1]);
 game.initialise();
 
 // Game loop
-while (!game.shouldEnd())
+while (true)
 {
     game.processFrame();
     Console.WriteLine(game.getFrameDisplayString());
+
+    if (game.shouldEnd())
+        break;
 
     movePlayerFromInput(game);
 }
