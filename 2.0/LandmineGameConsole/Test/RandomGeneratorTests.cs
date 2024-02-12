@@ -13,6 +13,10 @@ namespace Testing
         IRandomGenerator? randomGenerator1;
         IRandomGenerator? randomGenerator2;
 
+        // Tests use value of 5, so an assertion will be triggered if the tests fail to properly set this variable
+        int getRandomResult = 0;
+
+        // GIVENS
         public void givenHostContainerCreated()
         {
             host = HostContainer.CreateHostContainer();
@@ -29,19 +33,21 @@ namespace Testing
             randomGenerator2 = host!.Services.GetRequiredService<IRandomGenerator>();
         }
 
+        // WHENS
+        public void whenGetNumberWithMaximumEqualToMinimumPlusOneCalled()
+        {
+            getRandomResult = randomGenerator1!.getRandom(5, 6);
+        }
+
+        // THENS
+
         public void thenTheTwoRandomGeneratorsHaveDifferentSeeds()
         {
             Assert.AreNotEqual(randomGenerator1!.seed, randomGenerator2!.seed);
         }
-        public void thenGetNumberWithMaximumEqualToMinimumPlusOneAlwaysReturnsMinimum()
+        public void thenGetNumberResultIs5()
         {
-            // Try this one hundred times
-            // If the bounds really are off, the generator could return the correct number every time out of luck instead of being properly contrained
-            // This minimises the chances of that happening, however it's still questionable whether to include such a test
-            for (int i = 0; i < 100; i++) 
-            {
-                Assert.AreEqual(randomGenerator1!.getRandom(5, 6), 5);
-            }
+            Assert.AreEqual(getRandomResult, 5);
         }
 
         [TestMethod]
@@ -59,7 +65,15 @@ namespace Testing
             givenHostContainerCreated();
             givenRandomGeneratorCreated();
 
-            thenGetNumberWithMaximumEqualToMinimumPlusOneAlwaysReturnsMinimum();
+            // Try this one hundred times
+            // Note: If the bounds are off, the generator could return the correct number every time out of chance instead of being properly constrained.
+            // This approach minimises the chances of that happening, however it's still questionable whether to include such a test
+            for (int i = 0; i < 100; i++)
+            {
+                whenGetNumberWithMaximumEqualToMinimumPlusOneCalled();
+
+                thenGetNumberResultIs5();
+            }
         }
     }
 }

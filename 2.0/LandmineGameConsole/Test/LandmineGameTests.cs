@@ -12,6 +12,7 @@ namespace Testing
         IHost? host = null;
         ILandmineGame? landmineGame = null;
 
+        // GIVENS
         public void givenHostContainerCreated()
         {
             host = HostContainer.CreateHostContainer();
@@ -40,9 +41,10 @@ namespace Testing
 
         void givenThePlayerMovesToBelowTheTopRow()
         {
-            // Mocks the sequence of actions that would occur the in game loop
+            // Mocks the sequence of actions that would occur the in game loop:
             // - Game is updated
-            // - Then the player is moved in a direction given by user
+            // - The player is moved in a direction given by user
+            // - The cycle repeats
 
             landmineGame!.update();
             Assert.AreEqual(PlayerStatus.Alive, landmineGame!.getFrame().playerStatus);
@@ -86,10 +88,13 @@ namespace Testing
             landmineGame!.player.move(PlayerMoveDirection.Up);
         }
 
+        // WHENS
         void whenUpdateIsCalled()
         {
             landmineGame!.update();
         }
+
+        // THENS
 
         void thenPlayerStatusIsWon()
         {
@@ -167,9 +172,9 @@ namespace Testing
         {
             givenHostContainerAndGameCreated();
 
-            givenAMineIsPlacedAtXAndYEquals0();
-
             thenLivesIsEqualTo3();
+
+            givenAMineIsPlacedAtXAndYEquals0();
 
             whenUpdateIsCalled();
 
@@ -181,9 +186,9 @@ namespace Testing
         {
             givenHostContainerAndGameCreated();
 
-            givenALifeIsPlacedOnTheBoardAtXAndYEquals0();
-
             thenLivesIsEqualTo3();
+
+            givenALifeIsPlacedOnTheBoardAtXAndYEquals0();
 
             whenUpdateIsCalled();
 

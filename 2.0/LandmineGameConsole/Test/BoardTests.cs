@@ -13,7 +13,7 @@ namespace Testing
         const string EMPTY_JSON_DUMMY = "[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]";
         
 
-        // Mine coordinates are:
+        // DUMMY MINE COORDINATES:
         // (0, 0)
         // (7, 7)
         // (2, 5)
@@ -23,6 +23,12 @@ namespace Testing
 
         IHost? host;
         IBoard? board;
+
+        // 'Unkown' value will trigger an assertion if the tests fail to properly set this variable
+        BoardSquare squareAtResult = BoardSquare.Unkown;
+        // Empty values will trigger an assertion if the tests failt to properly set the below strings
+        string getJsonResult = "";
+        string getDisplayStringResult = "";
 
         // GIVENS
         public void givenHostContainerCreated()
@@ -52,12 +58,28 @@ namespace Testing
             board!.setSquare(0, 7, BoardSquare.Life);
         }
 
-        public void givenSomeMinesPlaced()
+        public void givenDummyMinesPlaced()
         {
             board!.setSquare(0, 0, BoardSquare.Mine);
             board!.setSquare(7, 7, BoardSquare.Mine);
             board!.setSquare(2, 5, BoardSquare.Mine);
             board!.setSquare(6, 4, BoardSquare.Mine);
+        }
+
+        // WHENS
+        public void whenSquareAtXEquals0YEquals7Called()
+        {
+            squareAtResult = board!.squareAt(0, 7);
+        }
+
+        public void whenGetJsonCalled()
+        {
+            getJsonResult = board!.getJson();
+        }
+
+        public void whenGetDisplayStringCalled()
+        {
+            getDisplayStringResult = board!.getDisplayString();
         }
 
         // THENS
@@ -75,39 +97,39 @@ namespace Testing
             Assert.IsFalse(notEmptyFound);
         }
 
-        public void thenBoardSquareAtXEquals0YEquals7IsEmpty()
+        public void thenBoardSquareAtResultIsEmpty()
         {
-            Assert.AreEqual(BoardSquare.Empty, board!.squareAt(0, 7));
+            Assert.AreEqual(BoardSquare.Empty, squareAtResult);
         }
 
-        public void thenBoardSqaureAtXEquals0YEquals7IsMine()
+        public void thenBoardSqaureAtResultIsMine()
         {
-            Assert.AreEqual(BoardSquare.Mine, board!.squareAt(0, 7));
+            Assert.AreEqual(BoardSquare.Mine, squareAtResult);
         }
 
-        public void thenBoardSqaureAtXEquals0YEquals7IsLife()
+        public void thenBoardSqaureAtResultIsLife()
         {
-            Assert.AreEqual(BoardSquare.Life, board!.squareAt(0, 7));
+            Assert.AreEqual(BoardSquare.Life, squareAtResult);
         }
 
-        public void thenJsonIsCorrectForEmptyBoard()
+        public void thenJsonResultIsCorrectForEmptyBoard()
         {
-            Assert.AreEqual(EMPTY_JSON_DUMMY, board!.getJson());
+            Assert.AreEqual(EMPTY_JSON_DUMMY, getJsonResult);
         }
 
-        public void thenDisplayStringIsCorrectForEmptyBoard()
+        public void thenDisplayStringResultIsCorrectForEmptyBoard()
         {
-            Assert.AreEqual(EMPTY_DISPLAY_STRING_DUMMY, board!.getDisplayString());
+            Assert.AreEqual(EMPTY_DISPLAY_STRING_DUMMY, getDisplayStringResult);
         }
 
-        public void thenJsonIsCorrectForBoardWithMines()
+        public void thenJsonResultIsCorrectForBoardWithMines()
         {
-            Assert.AreEqual(PLACED_MINES_JSON_DUMMY, board!.getJson());
+            Assert.AreEqual(PLACED_MINES_JSON_DUMMY, getJsonResult);
         }
 
         public void thenDisplayStringIsCorrectForBoardWithMines()
         {
-            Assert.AreEqual(PLACED_MINES_DISPLAY_STRING_DUMMY, board!.getDisplayString());
+            Assert.AreEqual(PLACED_MINES_DISPLAY_STRING_DUMMY, getDisplayStringResult);
         }
 
         [TestMethod]
@@ -123,29 +145,42 @@ namespace Testing
         {
             givenHostContainerAndBoardCreated();
 
-            thenBoardSquareAtXEquals0YEquals7IsEmpty();
+            // CASE 1
+            whenSquareAtXEquals0YEquals7Called();
 
+            thenBoardSquareAtResultIsEmpty();
 
+            // CASE 2
             givenMinePlacedAtXEquals0YEquals7();
 
-            thenBoardSqaureAtXEquals0YEquals7IsMine();
+            whenSquareAtXEquals0YEquals7Called();
 
+            thenBoardSqaureAtResultIsMine();
 
+            // CASE 3
             givenLifePlacedAtXEquals0YEquals7();
 
-            thenBoardSqaureAtXEquals0YEquals7IsLife();
+            whenSquareAtXEquals0YEquals7Called();
+
+            thenBoardSqaureAtResultIsLife();
         }
 
         [TestMethod]
         public void GetJsonReturnsCorrect()
         {
             givenHostContainerAndBoardCreated();
+
+            // CASE 1
+            whenGetJsonCalled();
             
-            thenJsonIsCorrectForEmptyBoard();
+            thenJsonResultIsCorrectForEmptyBoard();
 
-            givenSomeMinesPlaced();
+            // CASE 2
+            givenDummyMinesPlaced();
+            
+            whenGetJsonCalled();
 
-            thenJsonIsCorrectForBoardWithMines();
+            thenJsonResultIsCorrectForBoardWithMines();
         }
 
         [TestMethod]
@@ -153,9 +188,15 @@ namespace Testing
         {
             givenHostContainerAndBoardCreated();
 
-            thenDisplayStringIsCorrectForEmptyBoard();
+            // CASE 1
+            whenGetDisplayStringCalled();
 
-            givenSomeMinesPlaced();
+            thenDisplayStringResultIsCorrectForEmptyBoard();
+
+            // CASE 2
+            givenDummyMinesPlaced();
+
+            whenGetDisplayStringCalled();
 
             thenDisplayStringIsCorrectForBoardWithMines();
         }

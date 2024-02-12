@@ -12,6 +12,7 @@ namespace Testing
         IHost? host = null;
         IPlayer? player = null;
 
+        // GIVENS
         public void givenHostContainerCreated()
         {
             host = HostContainer.CreateHostContainer();
@@ -29,6 +30,7 @@ namespace Testing
             player.initialise(7, 7, 3, 8, 8);
         }
 
+        // WHENS
         void whenThePlayerMovesUp()
         {
             player!.move(PlayerMoveDirection.Up);
@@ -46,6 +48,7 @@ namespace Testing
             player!.move(PlayerMoveDirection.Right);
         }
 
+        // THENS
         void thenPlayerXAndYEquals0()
         {
             Assert.AreEqual(0, player!.getX());
@@ -88,6 +91,7 @@ namespace Testing
             givenPlayerCreatedWithXAndYEquals0();
 
             whenThePlayerMovesUp();
+
             thenPlayerXEquals0AndYEquals1();
         }
 
@@ -98,6 +102,7 @@ namespace Testing
             givenPlayerCreatedWithXAndYEquals7();
 
             whenThePlayerMovesDown();
+
             thenPlayerXEquals7AndYEquals6();
         }
 
@@ -108,6 +113,7 @@ namespace Testing
             givenPlayerCreatedWithXAndYEquals7();
 
             whenThePlayerMovesLeft();
+
             thenPlayerXEquals6AndYEquals7();
         }
 
@@ -118,6 +124,7 @@ namespace Testing
             givenPlayerCreatedWithXAndYEquals0();
 
             whenThePlayerMovesRight();
+
             thenPlayerXEquals1AndYEquals0();
         }
 
@@ -128,6 +135,7 @@ namespace Testing
             givenPlayerCreatedWithXAndYEquals7();
 
             whenThePlayerMovesUp();
+
             thenPlayerXAndYEquals7();
         }
 
@@ -138,6 +146,7 @@ namespace Testing
             givenPlayerCreatedWithXAndYEquals0();
 
             whenThePlayerMovesDown();
+
             thenPlayerXAndYEquals0();
         }
 
@@ -148,6 +157,7 @@ namespace Testing
             givenPlayerCreatedWithXAndYEquals0();
 
             whenThePlayerMovesLeft();
+
             thenPlayerXAndYEquals0();
         }
 
@@ -158,6 +168,7 @@ namespace Testing
             givenPlayerCreatedWithXAndYEquals7();
 
             whenThePlayerMovesRight();
+
             thenPlayerXAndYEquals7();
         }
     }
