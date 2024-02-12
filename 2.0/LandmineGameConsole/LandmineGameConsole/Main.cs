@@ -1,38 +1,37 @@
-﻿using LandmineGameClasses;
-using System;
-using System.Numerics;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-const int DEFAULT_BOARD_WIDTH = 8;
-const int DEFAULT_BOARD_HEIGHT = 8;
+using ApplicationClasses;
+using LandmineGameClasses;
 
-// Create game
-LandmineGame game = new LandmineGame();
+// SETUP HOST
+IHost host = HostContainer.CreateHostContainer();
 
-// Optional code to set the board's width and height according to user input
-int[] widthHeight = getBoardWidthAndHeightFromInput();
-game.setBoardWidthHeightInitialiseHints(widthHeight[0], widthHeight[1]);
+// MAIN APP
+ILandmineGame landmineGame = host.Services.GetRequiredService<ILandmineGame>(); // Automatically injects dependencies
 
-// Initialise game
-game.initialise();
+int[] widthHeight = getBoardWidthAndHeightFromInput(8, 8);
+landmineGame.setBoardWidthHeightInitHints(widthHeight[0], widthHeight[1]);
 
-// Game loop
-while (true)
+landmineGame.initialise();
+
+while(true)
 {
-    game.processFrame();
-    Console.WriteLine(game.getFrameDisplayString());
+    landmineGame.update();
+    Console.WriteLine(landmineGame.getFrameDisplayString());
 
-    if (game.shouldEnd())
+    if (landmineGame.shouldEnd())
         break;
 
-    movePlayerFromInput(game);
+    movePlayerFromInput(landmineGame);
 }
 
 // CONSOLE FUNCTIONS
-int[] getBoardWidthAndHeightFromInput()
+int[] getBoardWidthAndHeightFromInput(int defaultWidth, int defaultHeight)
 {
     int[] widthHeight = new int[2];
 
-    Console.WriteLine("Would you like to choose the game's board width and height (default values are 8)?");
+    Console.WriteLine("Would you like to choose the game's board width and height (default values are " + defaultWidth.ToString() + " and " + defaultHeight.ToString() + ")?");
 
     while (true)
     {
@@ -48,8 +47,8 @@ int[] getBoardWidthAndHeightFromInput()
             }
             else if (answerString == "N")
             {
-                widthHeight[0] = DEFAULT_BOARD_WIDTH;
-                widthHeight[1] = DEFAULT_BOARD_HEIGHT;
+                widthHeight[0] = defaultWidth;
+                widthHeight[1] = defaultHeight;
                 break;
             }
             else
@@ -97,7 +96,7 @@ int getBoardDimensionFromInput(string dimensionName)
     }
 }
 
-void movePlayerFromInput(LandmineGame game)
+void movePlayerFromInput(ILandmineGame game)
 {
     while (true)
     {
@@ -107,22 +106,22 @@ void movePlayerFromInput(LandmineGame game)
         {
             if (chosenDirectionString == "U")
             {
-                game.movePlayer(Player.MovementDirection.Up);
+                game.player.move(PlayerMoveDirection.Up);
                 break;
             }
             else if (chosenDirectionString == "D")
             {
-                game.movePlayer(Player.MovementDirection.Down);
+                game.player.move(PlayerMoveDirection.Down);
                 break;
             }
             else if (chosenDirectionString == "L")
             {
-                game.movePlayer(Player.MovementDirection.Left);
+                game.player.move(PlayerMoveDirection.Left);
                 break;
             }
             else if (chosenDirectionString == "R")
             {
-                game.movePlayer(Player.MovementDirection.Right);
+                game.player.move(PlayerMoveDirection.Right);
                 break;
             }
             else
@@ -136,4 +135,3 @@ void movePlayerFromInput(LandmineGame game)
         }
     }
 }
-
