@@ -54,7 +54,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void RandomlyGeneratedNumbersUsingMinimumAndMaximumAreWithinBounds()
+        public void GetRandomWithMinimumAndMaximumReturnsWithinBounds()
         {
             givenHostContainerCreated();
             givenRandomGeneratorCreated();
