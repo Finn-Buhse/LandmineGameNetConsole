@@ -23,13 +23,11 @@
 - [ Overview](#-overview)
 - [ Features](#-features)
 - [ Project Structure](#-project-structure)
-  - [ Project Index](#-project-index)
 - [ Getting Started](#-getting-started)
   - [ Prerequisites](#-prerequisites)
   - [ Installation](#-installation)
   - [ Usage](#-usage)
   - [ Testing](#-testing)
-- [ Project Roadmap](#-project-roadmap)
 - [ Contributing](#-contributing)
 - [ License](#-license)
 - [ Acknowledgments](#-acknowledgments)
@@ -38,13 +36,17 @@
 
 ##  Overview
 
-<code>❯ REPLACE-ME</code>
+This is a console landmine game built using .NET 8.0. The game does not possess a menu of any kind at the moment.
 
 ---
 
 ##  Features
 
-<code>❯ REPLACE-ME</code>
+- Choose your board size
+- Random mine generation
+- Ability to move in four directions
+- Dynamic board
+- Win the game by reaching the top of the board!
 
 ---
 
@@ -66,203 +68,6 @@
     └── README.md
 ```
 
-
-###  Project Index
-<details open>
-	<summary><b><code>LANDMINEGAMENETCONSOLE/</code></b></summary>
-	<details> <!-- __root__ Submodule -->
-		<summary><b>__root__</b></summary>
-		<blockquote>
-			<table>
-			<tr>
-				<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/LICENSE.txt'>LICENSE.txt</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			</table>
-		</blockquote>
-	</details>
-	<details> <!-- 1.0 Submodule -->
-		<summary><b>1.0</b></summary>
-		<blockquote>
-			<table>
-			<tr>
-				<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/FDBCodingChallengeMk1.0.sln'>FDBCodingChallengeMk1.0.sln</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			</table>
-			<details>
-				<summary><b>FDBCodingChallengeMk1.0</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/FDBCodingChallengeMk1.0/FDBCodingChallengeMk1.0.csproj'>FDBCodingChallengeMk1.0.csproj</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/FDBCodingChallengeMk1.0/Main.cs'>Main.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-				</blockquote>
-			</details>
-			<details>
-				<summary><b>Test</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/Test.csproj'>Test.csproj</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/PlayerTests.cs'>PlayerTests.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/LandmineGameTests.cs'>LandmineGameTests.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/RandomGeneratorTests.cs'>RandomGeneratorTests.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/GlobalUsings.cs'>GlobalUsings.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/BoardTests.cs'>BoardTests.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-					<details>
-						<summary><b>Source</b></summary>
-						<blockquote>
-							<table>
-							<tr>
-								<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/Source/Board.cs'>Board.cs</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							<tr>
-								<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/Source/RandomGenerator.cs'>RandomGenerator.cs</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							<tr>
-								<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/Source/LandmineGame.cs'>LandmineGame.cs</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							<tr>
-								<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/1.0/Test/Source/Player.cs'>Player.cs</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							</table>
-						</blockquote>
-					</details>
-				</blockquote>
-			</details>
-		</blockquote>
-	</details>
-	<details> <!-- .github Submodule -->
-		<summary><b>.github</b></summary>
-		<blockquote>
-			<details>
-				<summary><b>workflows</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/.github/workflows/generate-readme.yml'>generate-readme.yml</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-				</blockquote>
-			</details>
-		</blockquote>
-	</details>
-	<details> <!-- 2.0 Submodule -->
-		<summary><b>2.0</b></summary>
-		<blockquote>
-			<table>
-			<tr>
-				<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/LandmineGameConsole.sln'>LandmineGameConsole.sln</a></b></td>
-				<td><code>❯ REPLACE-ME</code></td>
-			</tr>
-			</table>
-			<details>
-				<summary><b>Test</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/Test/Test.csproj'>Test.csproj</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/Test/PlayerTests.cs'>PlayerTests.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/Test/LandmineGameTests.cs'>LandmineGameTests.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/Test/RandomGeneratorTests.cs'>RandomGeneratorTests.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/Test/GlobalUsings.cs'>GlobalUsings.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/Test/BoardTests.cs'>BoardTests.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-				</blockquote>
-			</details>
-			<details>
-				<summary><b>LandmineGameConsole</b></summary>
-				<blockquote>
-					<table>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/LandmineGameConsole/Main.cs'>Main.cs</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					<tr>
-						<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/LandmineGameConsole/LandmineGameConsole.csproj'>LandmineGameConsole.csproj</a></b></td>
-						<td><code>❯ REPLACE-ME</code></td>
-					</tr>
-					</table>
-					<details>
-						<summary><b>Source</b></summary>
-						<blockquote>
-							<table>
-							<tr>
-								<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/LandmineGameConsole/Source/Board.cs'>Board.cs</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							<tr>
-								<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/LandmineGameConsole/Source/RandomGenerator.cs'>RandomGenerator.cs</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							<tr>
-								<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/LandmineGameConsole/Source/LandmineGame.cs'>LandmineGame.cs</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							<tr>
-								<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/LandmineGameConsole/Source/Player.cs'>Player.cs</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							<tr>
-								<td><b><a href='https://github.com/Finn-Buhse/LandmineGameNetConsole/blob/master/2.0/LandmineGameConsole/Source/HostContainer.cs'>HostContainer.cs</a></b></td>
-								<td><code>❯ REPLACE-ME</code></td>
-							</tr>
-							</table>
-						</blockquote>
-					</details>
-				</blockquote>
-			</details>
-		</blockquote>
-	</details>
-</details>
-
 ---
 ##  Getting Started
 
@@ -272,7 +77,6 @@ Before getting started with LandmineGameNetConsole, ensure your runtime environm
 
 - **Programming Language:** CSharp
 - **Package Manager:** Nuget
-
 
 ###  Installation
 
@@ -292,15 +96,11 @@ Install LandmineGameNetConsole using one of the following methods:
 
 3. Install the project dependencies:
 
-
 **Using `nuget`** &nbsp; [<img align="center" src="https://img.shields.io/badge/C%23-239120.svg?style={badge_style}&logo=c-sharp&logoColor=white" />](https://docs.microsoft.com/en-us/dotnet/csharp/)
 
 ```sh
 ❯ dotnet restore
 ```
-
-
-
 
 ###  Usage
 Run LandmineGameNetConsole using the following command:
@@ -310,7 +110,6 @@ Run LandmineGameNetConsole using the following command:
 ❯ dotnet run
 ```
 
-
 ###  Testing
 Run the test suite using the following command:
 **Using `nuget`** &nbsp; [<img align="center" src="https://img.shields.io/badge/C%23-239120.svg?style={badge_style}&logo=c-sharp&logoColor=white" />](https://docs.microsoft.com/en-us/dotnet/csharp/)
@@ -318,14 +117,6 @@ Run the test suite using the following command:
 ```sh
 ❯ dotnet test
 ```
-
-
----
-##  Project Roadmap
-
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
 
 ---
 
