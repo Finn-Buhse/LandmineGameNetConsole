@@ -1,21 +1,38 @@
 name: Generate README
 on: workflow_dispatch
 
+permissions:
+  contents: write
+
 jobs:
   generate-readme:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-          architecture: 'x64'
+      #- name: Set up Python
+      #  uses: actions/setup-python@v5
+      #  with:
+      #    python-version: '3.12'
+      #    architecture: 'x64'
 
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
+      #- name: Display Python version
+      #  run: python -c "import sys; print(sys.version)"
 
       - name: Set up readmeai
         run: pip install readmeai
+
+      - name: Generate readme
+        run: |
+          readmeai --repository $REPOSITORY --output README.md
+        env:
+          REPOSITORY: ${{github.respotory}}
+
+      - name: Commit and push readme
+        run: |
+          git config --global user.name 'Finn Buhse'
+          git config --global user.email 'finn.buhse@fdbhealth.com'
+          git add README.md
+          git commit -m "Overwrote readme with AI-generated readme"
+          git push
         
