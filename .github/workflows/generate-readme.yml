@@ -18,7 +18,11 @@ jobs:
 
       - name: Generate readme
         run: |
-          readmeai --repository $REPOSITORY --output README.md
+          readmeai --repository $REPOSITORY \
+          --output README.md \
+          --header-style compact \
+          --image black \
+          --toc-style bullet
         env:
           REPOSITORY: "https://github.com/${{ github.repository }}"
 
