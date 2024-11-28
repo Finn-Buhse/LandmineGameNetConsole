@@ -26,7 +26,7 @@ jobs:
         run: |
           readmeai --repository $REPOSITORY --output README.md
         env:
-          REPOSITORY: ${{github.respotory}}
+          REPOSITORY: ${{ github.repository }}
 
       - name: Commit and push readme
         run: |
