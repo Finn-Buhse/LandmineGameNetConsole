@@ -1,7 +1,7 @@
 <div align="left">
     <img src="https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/external-readme-is-a-easy-to-build-a-developer-hub-that-adapts-to-the-user-logo-regular-tal-revivo.png" width="40%" align="left" style="margin-right: 15px"/>
     <div style="display: inline-block;">
-        <h2 style="display: inline-block; vertical-align: middle; margin-top: 0;">LANDMINEGAMENETCONSOLE</h2>
+        <h2 style="display: inline-block; align: left; vertical-align: middle; margin-top: 0;">LANDMINEGAMENETCONSOLE</h2>
         <p>
 	<em><code>❯ REPLACE-ME</code></em>
 </p>
