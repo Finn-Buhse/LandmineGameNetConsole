@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Text.Json;
 
 namespace LandmineGameClasses
 {
@@ -91,35 +92,9 @@ namespace LandmineGameClasses
             return BoardSquare.Unkown;
         }
 
-        public string getJson()
+        public BoardSquare[][] getBoardSquareArray()
         {
-            if(squareArray != null)
-            {
-                // Generate JSON array containing board square values
-                string json = "[";
-                for (var i = 0; i < height; i++)
-                {
-                    string row = "[";
-                    for (var j = 0; j < width; j++)
-                    {
-                        row += ((int)squareArray[i][j]).ToString();
-                        if (j != width - 1)
-                        {
-                            row += ",";
-                        }
-                    }
-                    row += "]";
-                    if (i != height - 1)
-                    {
-                        row += ",";
-                    }
-                    json += row;
-                }
-                json += "]";
-                return json;
-            }
-            Debug.Fail("Attempted to invoke getJSON on board which has not been initialised");
-            return "";
+            return squareArray!;
         }
 
         public string getDisplayString()

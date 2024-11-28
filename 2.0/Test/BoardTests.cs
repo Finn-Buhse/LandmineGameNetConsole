@@ -48,14 +48,9 @@ namespace Testing
             givenBoardCreatedWithWidthAndHeightEqualTo8();
         }
 
-        public void givenMinePlacedAtXEquals0YEquals7()
+        public void givenBoardSquareAtXEquals0YEquals7Is(BoardSquare boardSquare)
         {
-            board!.setSquare(0, 7, BoardSquare.Mine);
-        }
-
-        public void givenLifePlacedAtXEquals0YEquals7()
-        {
-            board!.setSquare(0, 7, BoardSquare.Life);
+            board!.setSquare(0, 7, boardSquare);
         }
 
         public void givenDummyMinesPlaced()
@@ -97,19 +92,9 @@ namespace Testing
             Assert.IsFalse(notEmptyFound);
         }
 
-        public void thenBoardSquareAtResultIsEmpty()
+        public void thenBoardSquareAtResultIs(BoardSquare boardSquare)
         {
-            Assert.AreEqual(BoardSquare.Empty, squareAtResult);
-        }
-
-        public void thenBoardSqaureAtResultIsMine()
-        {
-            Assert.AreEqual(BoardSquare.Mine, squareAtResult);
-        }
-
-        public void thenBoardSqaureAtResultIsLife()
-        {
-            Assert.AreEqual(BoardSquare.Life, squareAtResult);
+            Assert.AreEqual(boardSquare, squareAtResult);
         }
 
         public void thenJsonResultIsCorrectForEmptyBoard()
@@ -140,29 +125,19 @@ namespace Testing
             thenAllBoardSquaresAreEmpty();
         }
 
-        [TestMethod]
-        public void SquareAtReturnsCorrect()
+        [DataTestMethod]
+        [DataRow(BoardSquare.Empty)]
+        [DataRow(BoardSquare.Mine)]
+        [DataRow(BoardSquare.Life)]
+        public void SquareAtReturnsCorrect(BoardSquare boardSquare)
         {
             givenHostContainerAndBoardCreated();
 
-            // CASE 1
-            whenSquareAtXEquals0YEquals7Called();
-
-            thenBoardSquareAtResultIsEmpty();
-
-            // CASE 2
-            givenMinePlacedAtXEquals0YEquals7();
+            givenBoardSquareAtXEquals0YEquals7Is(boardSquare);
 
             whenSquareAtXEquals0YEquals7Called();
 
-            thenBoardSqaureAtResultIsMine();
-
-            // CASE 3
-            givenLifePlacedAtXEquals0YEquals7();
-
-            whenSquareAtXEquals0YEquals7Called();
-
-            thenBoardSqaureAtResultIsLife();
+            thenBoardSquareAtResultIs(boardSquare);
         }
 
         [TestMethod]

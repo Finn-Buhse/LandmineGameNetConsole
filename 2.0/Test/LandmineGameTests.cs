@@ -172,8 +172,6 @@ namespace Testing
         {
             givenHostContainerAndGameCreated();
 
-            thenLivesIsEqualTo3();
-
             givenAMineIsPlacedAtXAndYEquals0();
 
             whenUpdateIsCalled();
@@ -185,8 +183,6 @@ namespace Testing
         public void WhenPlayerIsOnLifeUpdateIncrementsLives()
         {
             givenHostContainerAndGameCreated();
-
-            thenLivesIsEqualTo3();
 
             givenALifeIsPlacedOnTheBoardAtXAndYEquals0();
 
