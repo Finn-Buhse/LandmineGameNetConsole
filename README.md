@@ -1,21 +1,21 @@
 <div align="left">
     <img src="https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/external-readme-is-a-easy-to-build-a-developer-hub-that-adapts-to-the-user-logo-regular-tal-revivo.png" width="40%" align="left" style="margin-right: 15px"/>
     <div style="display: inline-block;">
-        <h2 style="display: inline-block; align: left; margin-top: 0;">LANDMINEGAMENETCONSOLE</h2>
+        <h2 style="display: inline-block; vertical-align: middle; margin-top: 0;">LANDMINEGAMENETCONSOLE</h2>
         <p>
 	<em><code>❯ REPLACE-ME</code></em>
-	</p>
+</p>
         <p>
 	<img src="https://img.shields.io/github/license/Finn-Buhse/LandmineGameNetConsole?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/Finn-Buhse/LandmineGameNetConsole?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/Finn-Buhse/LandmineGameNetConsole?style=default&color=0080ff" alt="repo-top-language">
 	<img src="https://img.shields.io/github/languages/count/Finn-Buhse/LandmineGameNetConsole?style=default&color=0080ff" alt="repo-language-count">
-	</p>
+</p>
         <p><!-- default option, no dependency badges. -->
-	</p>
+</p>
         <p>
 	<!-- default option, no dependency badges. -->
-	</p>
+</p>
     </div>
 </div>
 <br clear="left"/>
