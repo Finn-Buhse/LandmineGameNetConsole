@@ -1,24 +1,22 @@
-<div align="left">
-    <img src="https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/external-readme-is-a-easy-to-build-a-developer-hub-that-adapts-to-the-user-logo-regular-tal-revivo.png" width="40%" align="left" style="margin-right: 15px"/>
-    <div style="display: inline-block;">
-        <h2 style="display: inline-block; vertical-align: middle; margin-top: 0;">LANDMINEGAMENETCONSOLE</h2>
-        <p>
+<p align="center">
+    <img src="https://img.icons8.com/external-tal-revivo-regular-tal-revivo/96/external-readme-is-a-easy-to-build-a-developer-hub-that-adapts-to-the-user-logo-regular-tal-revivo.png" align="center" width="30%">
+</p>
+<p align="center"><h1 align="center">LANDMINEGAMENETCONSOLE</h1></p>
+<p align="center">
 	<em><code>❯ REPLACE-ME</code></em>
 </p>
-        <p>
+<p align="center">
 	<img src="https://img.shields.io/github/license/Finn-Buhse/LandmineGameNetConsole?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/Finn-Buhse/LandmineGameNetConsole?style=default&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/Finn-Buhse/LandmineGameNetConsole?style=default&color=0080ff" alt="repo-top-language">
 	<img src="https://img.shields.io/github/languages/count/Finn-Buhse/LandmineGameNetConsole?style=default&color=0080ff" alt="repo-language-count">
 </p>
-        <p><!-- default option, no dependency badges. -->
+<p align="center"><!-- default option, no dependency badges. -->
 </p>
-        <p>
+<p align="center">
 	<!-- default option, no dependency badges. -->
 </p>
-    </div>
-</div>
-<br clear="left"/>
+<br>
 
 ##  Table of Contents
 
@@ -54,17 +52,6 @@
 
 ```sh
 └── LandmineGameNetConsole/
-    ├── .github
-    │   └── workflows
-    ├── 1.0
-    │   ├── FDBCodingChallengeMk1.0
-    │   ├── FDBCodingChallengeMk1.0.sln
-    │   └── Test
-    ├── 2.0
-    │   ├── LandmineGameConsole
-    │   ├── LandmineGameConsole.sln
-    │   └── Test
-    └── README.md
 ```
 
 
